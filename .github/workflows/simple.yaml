@@ -8,6 +8,7 @@ jobs:
         run: pwd
   run-powershell-command:
     runs-on: windows-latest
+    needs: [run-shell-command]
     steps:
       - name: show the directory
         run: Get-Location      
