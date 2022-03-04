@@ -1,0 +1,23 @@
+name: Actions Workflow
+on: push
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: working location
+        run: |
+          pwd
+          ls -a
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: working location
+        run: |
+          pwd
+          ls -a
+      - name: hello world Action
+        id: greet
+        uses: gr2m/hello-world-js-action@v1.x
+        with:
+          greeting: Haidar
+      - name: greeting time
+        run: echo "${{ steps.greet.outputs.time }}"
