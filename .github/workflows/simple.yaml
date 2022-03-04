@@ -1,0 +1,9 @@
+name: running shell command
+on: push
+jobs: 
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list the current directory
+        run: pwd
+        
